@@ -2,7 +2,7 @@
 Sample Node.js code that uses Rabbit MQ to implement choreography in Microservices 
 http://blog.pleb.in
 
-Demo MicroServices
+Demo MicroServices <br />
 Order Creation
 Invoice Check
 Stock Replenish
