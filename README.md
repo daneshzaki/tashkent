@@ -3,10 +3,10 @@ Sample Node.js code that uses Rabbit MQ to implement choreography in Microservic
 http://blog.pleb.in
 
 Demo MicroServices <br />
-Order Creation
-Invoice Check
-Stock Replenish
-Order Shipment
+ - Order Creation
+ - Invoice Check
+ - Stock Replenish
+ - Order Shipment
 
 Messages
 "order created!", "stock replenished!" & "ship order!"
