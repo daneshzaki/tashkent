@@ -34,7 +34,7 @@ module.exports.failure = function failure(res, next, data, http_code){
 module.exports.publish = function(msgKey, msgPayload )
 {
   const amqp = require('amqplib/callback_api');
-  const AMQP_URL='amqp://triicwrz:ZndWbNcs8ELHkF8UAkiHl_oQfMdx5rxL@elephant.rmq.cloudamqp.com/triicwrz';
+  const AMQP_URL='localhost';
     
   amqp.connect(AMQP_URL, function(err, conn) {
       conn.createChannel(function(err, ch) {
