@@ -1,7 +1,8 @@
 //stubs for demo
 "use strict";
+const helpers = require('helperfunctions');
 const amqp = require('amqplib/callback_api');
-const AMQP_URL='amqp://localhost';
+const AMQP_URL='amqp://triicwrz:ZndWbNcs8ELHkF8UAkiHl_oQfMdx5rxL@elephant.rmq.cloudamqp.com/triicwrz';
 
 module.exports = function()
 {
@@ -9,24 +10,7 @@ module.exports = function()
     const qname = 'invQ';
     const msgKey = 'order created!';
     const ex = 'tashkentx';
-
-    amqp.connect(AMQP_URL, function(err, conn) {
-        conn.createChannel(function(err, ch) {            
-            ch.assertExchange(ex, 'direct', {durable: true});
-            ch.assertQueue(qname, {exclusive: false}, function(err, q) {
-            console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", q.queue);
-            ch.bindQueue(q.queue, ex, msgKey);
-
-            ch.consume(q.queue, function(msg) {
-                console.log(" [x] Received %s", msg.content.toString() + ' ' + new Date().getTime());
-                
-                //do processing and post event to start next service
-                doProcess();
-        
-            }, {noAck: true});
-            });
-        });
-    });
+    helpers.consume(ex, qname, msgKey, doProcess);
 
     function doProcess()
     {
@@ -39,28 +23,8 @@ module.exports = function()
             nextSrvMsg = 'stock replenish!';
         }
         console.log('Processing message... ');
-        console.log('Checking inventory... ');
-
-        amqp.connect(AMQP_URL, function(err, conn) {
-            conn.createChannel(function(err, ch) {
-              var exch = 'tashkentx';  
-              ch.assertExchange(exch, 'direct', {durable: true});
-              
-              //buffer can take a payload
-              ch.publish(exch, nextSrvMsg, Buffer.from(nextSrvMsg));
-              console.log(" [x] Sent '%s'", nextSrvMsg);  
-              return '';        
-              });
-
-              var ON_DEATH = require('death'); //cleanup
-              
-              ON_DEATH(function(signal, err) {
-                //clean up code 
-                console.log('##cleaning up...');
-                setTimeout(function() { conn.close(); process.exit(0) }, 500);
-              })
-    
-          });
+        console.log('Checking inventory...done ');
+        helpers.publish(nextSrvMsg, nextSrvMsg);
             
     }
 

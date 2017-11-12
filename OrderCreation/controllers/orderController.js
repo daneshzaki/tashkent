@@ -2,7 +2,7 @@
 //interacts with Mlab - MongoDb as a Service using ReviewModel
 "use strict";
 const restifyClient = require('restify-clients');
-const helpers = require('../config/helperFunctions.js');
+const helpers = require('helperfunctions');
 const OrderModel = require('../models/orderModel.js');
 
 module.exports = function(server)
