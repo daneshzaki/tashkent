@@ -31,8 +31,13 @@ module.exports = function()
     function doProcess()
     {
         //set based on some check
-        var nextSrvMsg = "ship order!";
+        var nextSrvMsg = 'ship order!';
         
+        //some fake check
+        if(new Date().getDay() != 0)
+        {
+            nextSrvMsg = 'stock replenish!';
+        }
         console.log('Processing message... ');
         console.log('Checking inventory... ');
 
@@ -46,8 +51,14 @@ module.exports = function()
               console.log(" [x] Sent '%s'", nextSrvMsg);  
               return '';        
               });
-    
-            //setTimeout(function() { conn.close(); process.exit(0) }, 500);
+
+              var ON_DEATH = require('death'); //cleanup
+              
+              ON_DEATH(function(signal, err) {
+                //clean up code 
+                console.log('##cleaning up...');
+                setTimeout(function() { conn.close(); process.exit(0) }, 500);
+              })
     
           });
             

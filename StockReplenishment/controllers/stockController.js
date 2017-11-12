@@ -47,7 +47,13 @@ module.exports = function()
               return '';        
               });
     
-            //setTimeout(function() { conn.close(); process.exit(0) }, 500);
+              var ON_DEATH = require('death'); //cleanup
+              
+              ON_DEATH(function(signal, err) {
+                //clean up code 
+                console.log('##cleaning up...');
+                setTimeout(function() { conn.close(); process.exit(0) }, 500);
+              })
     
           });
             

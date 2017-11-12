@@ -2,7 +2,7 @@
 "use strict";
 
 //business logic - CRUD methods
-const invController = require('./controllers/invController.js');
+const shipController = require('./controllers/shipController.js');
 
 //start the service
-invController();
+shipController();
