@@ -1,2 +1,2 @@
-﻿contains helper functions for HTTP methods RabbitMQ 
- Install using npm install --save ..\helperfunctions\helperfunctions-0.0.1.tgz
+﻿Contains helper functions for HTTP methods and RabbitMQ <br />
+Install using npm install --save ..\helperfunctions\helperfunctions-0.0.1.tgz
