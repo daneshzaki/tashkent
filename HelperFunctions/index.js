@@ -1,7 +1,11 @@
 //contains helper functions - for HTTP methods, RabbitMQ
 "use strict";
 const amqp = require('amqplib/callback_api');
-const AMQP_URL='amqp://triicwrz:ZndWbNcs8ELHkF8UAkiHl_oQfMdx5rxL@elephant.rmq.cloudamqp.com/triicwrz';
+
+//the mqConnection script just returns the AMQP URL - AMQP_URL can be given the value of your AMQP/RabbitMQ instance
+const mqcon = require('./mqConnection');
+const AMQP_URL= mqcon.getAMQPURL();
+
 const ON_DEATH = require('death'); //for cleanup
 
 function _respond(res, next, status, data, http_code)

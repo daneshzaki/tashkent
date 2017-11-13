@@ -1,8 +1,6 @@
 //stubs for demo
 "use strict";
 const helpers = require('helperfunctions');
-const amqp = require('amqplib/callback_api');
-const AMQP_URL='amqp://triicwrz:ZndWbNcs8ELHkF8UAkiHl_oQfMdx5rxL@elephant.rmq.cloudamqp.com/triicwrz';
 
 module.exports = function()
 {
