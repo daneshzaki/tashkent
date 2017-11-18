@@ -1,0 +1,108 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Order
+  description: Details the Order service
+paths:
+  /:
+    get:
+      description: |
+        returns all orders
+      responses:
+        '200':
+          description: Returns all orders
+          schema:
+            $ref: '#definitions/Orders'
+        '400':
+          description: Error response for a bad request
+          schema:
+            title: status
+            type: string
+            properties:
+              status:
+                type: string
+        '500':
+          description: Error saving order to database
+          schema:
+            title: status
+            type: string
+            properties:
+              status:
+                type: string
+  /order:
+    post:
+      description: |
+        inserts an order
+      parameters:
+        - name: order
+          in: body
+          description: order
+          required: true
+          schema:
+            $ref: '#definitions/Order'
+      responses:
+        '200':
+          description: Order created successfully
+          schema:
+            title: status
+            type: string
+            properties:
+              status:
+                type: string
+        '400':
+          description: Error response for a bad request
+          schema:
+            title: status
+            type: string
+            properties:
+              status:
+                type: string
+        '500':
+          description: Error saving order to database
+          schema:
+            title: status
+            type: string
+            properties:
+              status:
+                type: string
+  '/order/{id}':
+    get:
+      description: |
+        returns an order matching the id passed
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: order
+          schema:
+            $ref: '#definitions/Order'
+        '404':
+          description: Order does not exist
+          schema:
+            title: status
+            type: string
+            properties:
+              status:
+                type: string
+definitions:
+  Order:
+    required:
+      - id
+    properties:
+      id:
+        type: string
+      date:
+        type: string
+      type:
+        type: string
+      desc:
+        type: string
+      status:
+        type: string
+  Orders:
+    type: array
+    items:
+      $ref: '#/definitions/Order'
