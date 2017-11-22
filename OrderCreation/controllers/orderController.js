@@ -86,5 +86,22 @@ module.exports = function(server)
 
     });
     
+    //compensation logic
+    //listen on a queue for failure messages
+
+    const qname = 'ordCompQ';
+    const msgKey = 'order process error';
+    const ex = 'tashkentx';
+    helpers.consume(ex, qname, msgKey, compensate);    
+
+    //on receipt of failure message, execute compensation logic     
+    function compensate()
+    {
+        console.log('Received failure message... ');
+        console.log('Compensating... '); 
+        console.log('Updating order db');           
+        console.log('Order cancelled successfully');
+    }
+
   
 }
