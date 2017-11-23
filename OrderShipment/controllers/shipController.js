@@ -13,7 +13,7 @@ module.exports = function()
     function doProcess()
     {
         //uncomment for testing failure - should be part of an exception block
-        //helpers.publish('order process error', 'order not shipped');
+        helpers.publish('order process error', 'order not shipped');
         return;
         
         //set based on some check

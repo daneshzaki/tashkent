@@ -14,7 +14,7 @@ module.exports = function()
     {
         //uncomment for testing failure - should be part of an exception block
         //helpers.publish('order process error', 'inventory unavailable');
-        return;
+        //return;
         
         //set based on some check
         var nextSrvMsg = 'ship order!';           
@@ -36,12 +36,8 @@ module.exports = function()
     //listen on a queue for failure messages
     qname = 'invCompQ';
 
-    //failure 1: stock could not be replenished
-    msgKey = 'stock not replenished';    
-    helpers.consume(ex, qname, msgKey, compensate);    
-
-    //failure 2: order could not be shipped
-    msgKey = 'order not shipped';    
+    //failure : order process error
+    msgKey = 'order process error';    
     helpers.consume(ex, qname, msgKey, compensate);    
 
     //on receipt of failure message, execute compensation logic     

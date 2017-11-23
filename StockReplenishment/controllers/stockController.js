@@ -13,7 +13,7 @@ module.exports = function()
     function doProcess()
     {
         //uncomment for testing failure - should be part of an exception block
-        //helpers.publish('order process error', 'stock not replenished');
+        helpers.publish('order process error', 'stock not replenished');
         return;
         
         //set based on some check
