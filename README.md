@@ -13,8 +13,7 @@ Messages: "order created!", "stock replenished!" & "ship order!"
  
 Input: Order creation by POST method call to Order Creation service
 
-Process Flow: <br />
-order create --> inventory check --> stock replenish (or) order shipment --> order delivery
+Process Flow: order create --> inventory check --> stock replenish (or) order shipment --> order delivery
 
 Output: Order Shipped
 
