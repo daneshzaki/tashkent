@@ -1,6 +1,7 @@
 # tashkent
 Sample Node.js code that uses Rabbit MQ to implement choreography in Microservices 
-http://blog.pleb.in
+
+<img src="https://4.bp.blogspot.com/-7MfGzg8k9cI/WhlCGElztAI/AAAAAAAABIM/vAmii5PitiA50D7UPSiqRIlmxp7ArZWFwCLcBGAs/s640/compensation.png"> </img>
 
 <b>Demo MicroServices</b> 
  - Order Creation
@@ -17,3 +18,4 @@ order create --> inventory check --> stock replenish (or) order shipment --> ord
 
 Output: Order Shipped
 
+This <a href="http://blog.pleb.in/2017/11/understanding-microservices.html">post</a> describes the high level flow and this <a href="http://blog.pleb.in/2017/11/compensation-logic-using-rabbitmq.html">post</a> describes the compensation logic.
