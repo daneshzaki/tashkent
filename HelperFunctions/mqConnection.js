@@ -3,7 +3,7 @@
 module.exports = {
 
     getAMQPURL: function() {       
-        return 'localhost';
+        return 'amqp://triicwrz:ZndWbNcs8ELHkF8UAkiHl_oQfMdx5rxL@elephant.rmq.cloudamqp.com/triicwrz';
     }
 
 }

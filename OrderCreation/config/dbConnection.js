@@ -4,7 +4,7 @@ module.exports = {
 
     getMongoConnection: function() {
 
-        return 'localhost';
+        return 'mongodb://testuser:testpass@ds235065.mlab.com:35065/orders';
 
     }
 

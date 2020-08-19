@@ -49,3 +49,8 @@ Temporary Items
 /node_modules
 node_modules/
 
+HelperFunctions/mqConnection.js
+OrderCreation/config/dbConnection.js
+HelperFunctions/mqConnection.js
+HelperFunctions/mqConnection.js
+OrderCreation/config/dbConnection.js
