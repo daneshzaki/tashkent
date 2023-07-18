@@ -12,7 +12,7 @@
     "amqplib": "^0.5.1",
     "death": "^1.1.0",
     "helperfunctions": "file:../helperfunctions/helperfunctions-0.0.1.tgz",
-    "mongoose": "^4.13.21",
+    "mongoose": "^5.13.20",
     "restify": "^6.2.3",
     "restify-clients": "^1.5.2",
     "restify-validator": "^0.3.1",
