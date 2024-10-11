@@ -16,6 +16,6 @@
     "restify": "^6.2.3",
     "restify-clients": "^1.6.0",
     "restify-validator": "^0.3.1",
-    "socket.io": "^2.5.0"
+    "socket.io": "^4.8.0"
   }
 }
